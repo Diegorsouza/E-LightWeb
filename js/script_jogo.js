@@ -30,6 +30,7 @@ function exibirJogo(){
 		{
 		var dadosjogo = snap.val();
 		var infJogo = "";
+		var infBansAzul = "";
 		for(var cont in dadosjogo)
 			{
 				infJogo += "<tr>"+
@@ -41,6 +42,18 @@ function exibirJogo(){
 												"<td>" +  dadosjogo[cont].moedasEquipeVermelha + "</td>"+
 												"<td>" +  dadosjogo[cont].torresEquipeAzul + "</td>"+
 												"<td>" +  dadosjogo[cont].torresEquipeVermelha + "</td>"+
+												"<td>" +  dadosjogo[cont].bansAzul[0] + ", " +
+																  dadosjogo[cont].bansAzul[1] + ", " +
+																	dadosjogo[cont].bansAzul[2] + ", " +
+																	dadosjogo[cont].bansAzul[3] + ", " +
+																	dadosjogo[cont].bansAzul[4] + ", " +
+												"</td>"+
+												"<td>" +  dadosjogo[cont].bansVermelho[0] + ", " +
+																  dadosjogo[cont].bansVermelho[1] + ", " +
+																	dadosjogo[cont].bansVermelho[2] + ", " +
+																	dadosjogo[cont].bansVermelho[3] + ", " +
+																	dadosjogo[cont].bansVermelho[4] + ", " +
+												"</td>"+
                         //chaveJogo terá a posição que será excluida
 												'<td>' +
                             '<button class="btn apagar" chaveJogoLista="'+ cont +'">'+'Excluir'+
@@ -50,7 +63,7 @@ function exibirJogo(){
                             '<button class="btn editar" chaveJogoLista="'+ cont +'">'+'Editar'+
                             '</button>'+
                         '</td>'+
-										 "</tr>"	;
+										 "</tr>" ;
 			}
 			tabelaListarJogo.innerHTML = infJogo;
       if(infJogo != ""){
@@ -79,8 +92,18 @@ function editarInfJogo(){
 		document.getElementById("partida").value = dadosJogo.partida;
 		document.getElementById("moedas_equipe_azul").value = dadosJogo.moedasEquipeAzul;
 		document.getElementById("moedas_equipe_verm").value = dadosJogo.moedasEquipeVermelha;
-		document.getElementById("torres_equipe_azul").value = dadosJogo.torresEquipeazul;
+		document.getElementById("torres_equipe_azul").value = dadosJogo.torresEquipeAzul;
 		document.getElementById("torres_equipe_verm").value = dadosJogo.torresEquipeVermelha;
+		document.getElementById("bans_azul_0").value = dadosJogo.bansAzul[0];
+		document.getElementById("bans_azul_1").value = dadosJogo.bansAzul[1];
+		document.getElementById("bans_azul_2").value = dadosJogo.bansAzul[2];
+		document.getElementById("bans_azul_3").value = dadosJogo.bansAzul[3];
+		document.getElementById("bans_azul_4").value = dadosJogo.bansAzul[4];
+		document.getElementById("bans_verm_0").value = dadosJogo.bansVermelho[0];
+		document.getElementById("bans_verm_1").value = dadosJogo.bansVermelho[1];
+		document.getElementById("bans_verm_2").value = dadosJogo.bansVermelho[2];
+		document.getElementById("bans_verm_3").value = dadosJogo.bansVermelho[3];
+		document.getElementById("bans_verm_4").value = dadosJogo.bansVermelho[4];
 
 	});
 	document.getElementById("btn_cadastrar_jogo").value = UPDATE;
@@ -95,13 +118,14 @@ function enviarInformacoesJogo(event)
 		case CREATE:
 		refJogo.push(
 				{
+
 				equipeCampea: event.target.equipe_campea.value,
 				inicio: event.target.dt_inicio_jogo.value,
 				termino: event.target.dt_term_jogo.value,
 				partida: event.target.partida.value,
 				moedasEquipeAzul: event.target.moedas_equipe_azul.value,
 				moedasEquipeVermelha: event.target.moedas_equipe_verm.value,
-				torresEquipeazul: event.target.torres_equipe_azul.value,
+				torresEquipeAzul: event.target.torres_equipe_azul.value,
 				torresEquipeVermelha: event.target.torres_equipe_verm.value
 				});
 		break;
@@ -114,7 +138,7 @@ function enviarInformacoesJogo(event)
 				partida: event.target.partida.value,
 				moedasEquipeAzul: event.target.moedas_equipe_azul.value,
 				moedasEquipeVermelha: event.target.moedas_equipe_verm.value,
-				torresEquipeazul: event.target.torres_equipe_azul.value,
+				torresEquipeAzul: event.target.torres_equipe_azul.value,
 				torresEquipeVermelha: event.target.torres_equipe_verm.value
 		});
 		break;

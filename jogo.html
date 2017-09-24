@@ -9,13 +9,23 @@
    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script>
-       var config = {
+      var config = {
        apiKey: "AIzaSyDCQzrIvC9SzXJ9p_ODVJgoY2YOIXb5-MM",
        authDomain: "e-light-2b5d4.firebaseapp.com",
        databaseURL: "https://e-light-2b5d4.firebaseio.com",
        projectId: "e-light-2b5d4",
        storageBucket: "e-light-2b5d4.appspot.com",
        messagingSenderId: "630238691243"
+       // Initialize Firebase (Projeto TCC)
+       /*
+       var config = {
+        apiKey: "AIzaSyBNWYnb1e8SRixb8nfBvHGNijD2OIXQLd0",
+        authDomain: "e-light-dbc42.firebaseapp.com",
+        databaseURL: "https://e-light-dbc42.firebaseio.com",
+        projectId: "e-light-dbc42",
+        storageBucket: "e-light-dbc42.appspot.com",
+        messagingSenderId: "277342076692"
+        */
      };
      firebase.initializeApp(config);
      firebase.auth().signInAnonymously();
@@ -52,18 +62,18 @@
         <input type="number" name="torres_equipe_verm" value="" id="torres_equipe_verm">
        <p>
        <label for="bans_equipe_azul">Bans Equipe Azul:</label><br>
-        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_0">
-        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_1">
-        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_2">
-        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_3">
-        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_4"><br>
+        <input type="text" name="bans_equipe_azul" value="" id="bans_azul_0">
+        <input type="text" name="bans_equipe_azul" value="" id="bans_azul_1">
+        <input type="text" name="bans_equipe_azul" value="" id="bans_azul_2">
+        <input type="text" name="bans_equipe_azul" value="" id="bans_azul_3">
+        <input type="text" name="bans_equipe_azul" value="" id="bans_azul_4"><br>
        <p>
        <label for="bans_equipe_vermelha">Bans Equipe Vermelha:</label><br>
-        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_0">
-        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_1">
-        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_2">
-        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_3">
-        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_4"><br>
+        <input type="text" name="bans_equipe_vermelha" value="" id="bans_verm_0">
+        <input type="text" name="bans_equipe_vermelha" value="" id="bans_verm_1">
+        <input type="text" name="bans_equipe_vermelha" value="" id="bans_verm_2">
+        <input type="text" name="bans_equipe_vermelha" value="" id="bans_verm_3">
+        <input type="text" name="bans_equipe_vermelha" value="" id="bans_verm_4"><br>
        <p>
         <input type="submit" name="" value="Cadastrar Jogo" id="btn_cadastrar_jogo">  <input type="reset" value="Limpar">
     </form>
@@ -80,6 +90,8 @@
         <th>Moedas equipe Vermelha:</th>
         <th>Torres equipe Azul:</th>
         <th>Torres equipe Vermelha:</th>
+        <th>Bans Azul:</th>
+        <th>Bans Vermelha:</th>
         <th></th>
         <th></th>
      </tr>
