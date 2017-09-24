@@ -34,7 +34,7 @@ function exibirEquipe(){
 			{
 				infEquipe += "<tr>"+
 												"<td>" +  dadosEquipe[cont].nome + "</td>"+
-												'<td>'+'<img src="'+  dadosEquipe[cont].logo + '">' +"</td>"+
+												'<td>'+'<img src="assets/images/'+  dadosEquipe[cont].logo + '">' +"</td>"+
 
                         //chaveEquipe terá a posição que será excluida
 												'<td>' +
