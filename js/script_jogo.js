@@ -118,7 +118,6 @@ function enviarInformacoesJogo(event)
 		case CREATE:
 		refJogo.push(
 				{
-
 				equipeCampea: event.target.equipe_campea.value,
 				inicio: event.target.dt_inicio_jogo.value,
 				termino: event.target.dt_term_jogo.value,
@@ -126,7 +125,8 @@ function enviarInformacoesJogo(event)
 				moedasEquipeAzul: event.target.moedas_equipe_azul.value,
 				moedasEquipeVermelha: event.target.moedas_equipe_verm.value,
 				torresEquipeAzul: event.target.torres_equipe_azul.value,
-				torresEquipeVermelha: event.target.torres_equipe_verm.value
+				torresEquipeVermelha: event.target.torres_equipe_verm.value,
+				
 				});
 		break;
 		case UPDATE:
@@ -139,7 +139,7 @@ function enviarInformacoesJogo(event)
 				moedasEquipeAzul: event.target.moedas_equipe_azul.value,
 				moedasEquipeVermelha: event.target.moedas_equipe_verm.value,
 				torresEquipeAzul: event.target.torres_equipe_azul.value,
-				torresEquipeVermelha: event.target.torres_equipe_verm.value
+				torresEquipeVermelha: event.target.torres_equipe_verm.value,
 		});
 		break;
 	}
