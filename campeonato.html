@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+     <title>E-Light</title>
+ </head>
+ <body>
+   <script src="js/script_campeonato.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script>
+   // Initialize Firebase (Projeto TCC)
+      var config = {
+       apiKey: "AIzaSyBNWYnb1e8SRixb8nfBvHGNijD2OIXQLd0",
+       authDomain: "e-light-dbc42.firebaseapp.com",
+       databaseURL: "https://e-light-dbc42.firebaseio.com",
+       projectId: "e-light-dbc42",
+       storageBucket: "e-light-dbc42.appspot.com",
+       messagingSenderId: "277342076692"
+     };
+     firebase.initializeApp(config);
+     firebase.auth().signInAnonymously();
+     firebase.auth().onAuthStateChanged(firebaseUser =>{
+       console.log(firebaseUser);
+     });
+   </script>
+
+   <div class="container">
+     <h3>Gerenciar Campeonato</h3>
+     <form id="cadastracampeonato" action="campeonato.html" method="post">
+       <label for="campeonato">Nome do Campeonato:</label><br>
+       <p>
+       <input type="text" name="campeonato" id="campeonato">
+       <p>
+         <input type="submit" id="btn_cadastrar_campeonato" name="" value="Cadastrar Campeonato">  <input type="reset" value="Limpar">
+    </form>
+   </div>
+   <div class="container">
+     <table class="table table-hover">
+  <thead>
+       <tr>
+         <th>Nome do Campeonato</th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+         <tbody id="tabela-listar-Campeonato">
+        </tbody>
+     </table>
+
+   </div>
+</body>
+</html>

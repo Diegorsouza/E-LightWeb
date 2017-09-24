@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+     <title>E-Light</title>
+ </head>
+ <body>
+   <script src="js/script_partida.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+   <script>
+   // Initialize Firebase (Projeto TCC)
+      var config = {
+       apiKey: "AIzaSyBNWYnb1e8SRixb8nfBvHGNijD2OIXQLd0",
+       authDomain: "e-light-dbc42.firebaseapp.com",
+       databaseURL: "https://e-light-dbc42.firebaseio.com",
+       projectId: "e-light-dbc42",
+       storageBucket: "e-light-dbc42.appspot.com",
+       messagingSenderId: "277342076692"
+      };
+      firebase.initializeApp(config);
+      firebase.auth().signInAnonymously();
+      firebase.auth().onAuthStateChanged(firebaseUser =>{
+        console.log(firebaseUser);
+      });
+   </script>
+   <div class="container">
+     <h3>Gerenciar Partidas</h3>
+     <form id="cadastrapartida" action="partida.html" method="post">
+       <label for="nome_campeonato">Nome do Campeonato:</label><br>
+        <input type="text" name="nome_campeonato" id="nome_campeonato" value=""><br>
+       <p>
+       <label for="data_inicio">Data inicio da partida:</label><br>
+        <input type="date" name="data_inicio" id="data_inicio" value=""><br>
+       <p>
+       <label for="data_termino">Data termino da partida:</label><br>
+        <input type="date" name="data_termino" id="data_termino" value=""><br>
+       <p>
+       <label for="equipe_azul">Equipe Azul:</label><br>
+        <input type="text" name="equipe_azul" id="equipe_azul" value=""><br>
+       <p>
+       <label for="equipe_vermelha">Equipe Vermelha:</label><br>
+        <input type="text" name="equipe_vermelha" id="equipe_vermelha" value=""><br>
+       <p>
+       <label for="tipo">Tipo:</label><br>
+       <select name="tipo">
+         <option selected value=""></<option>
+         <option value="MELHOR_DE_3">MELHOR_DE_3</option>
+         <option value="MELHOR_DE_5">MELHOR_DE_5</option>
+      </select>
+       <p>
+       <label for="tipo_partida">Tipo Partida:</label><br>
+       <select name="tipo_partida">
+         <option selected=""></<option>
+         <option value="MELHOR_DE_3">MELHOR_DE_3</option>
+         <option value="MELHOR_DE_5">MELHOR_DE_5</option>
+      </select>
+       <p>
+      <input type="submit" name="" value="Cadastrar Partida" id="btn_cadastrar_partida">  <input type="reset" value="Limpar">
+    </form>
+  </div>
+  <div class="container">
+    <table class="table table-hover">
+ <thead>
+      <tr>
+        <th>Nome Campeonato</th>
+        <th>Data Inicio</th>
+        <th>Data Termino</th>
+        <th>Equipe Azul</th>
+        <th>Equipe Vermelha</th>
+        <th>Tipo</th>
+        <th>Tipo Partida</th>
+        <th></th>
+        <th></th>
+     </tr>
+   </thead>
+        <tbody id="tabela-listar-Partida">
+       </tbody>
+    </table>
+
+  </div>
+</body>
+</html>

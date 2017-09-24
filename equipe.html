@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+     <title>E-Light</title>
+ </head>
+ <body>
+   <script src="js/script_equipe.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script>
+   // Initialize Firebase (Projeto TCC)
+      var config = {
+       apiKey: "AIzaSyBNWYnb1e8SRixb8nfBvHGNijD2OIXQLd0",
+       authDomain: "e-light-dbc42.firebaseapp.com",
+       databaseURL: "https://e-light-dbc42.firebaseio.com",
+       projectId: "e-light-dbc42",
+       storageBucket: "e-light-dbc42.appspot.com",
+       messagingSenderId: "277342076692"
+     };
+     firebase.initializeApp(config);
+     firebase.auth().signInAnonymously();
+     firebase.auth().onAuthStateChanged(firebaseUser =>{
+       console.log(firebaseUser);
+     });
+   </script>
+
+   <div class="container">
+     <h3>Gerenciar Equipes</h3>
+     <form id="cadastraequipe" action="equipe.html" method="post">
+       <label for="nome_equipe">Nome da Equipe:</label><br>
+        <input type="text" name="nome_equipe" id="nome_equipe" value=""><br>
+       <p>
+       <label for="logo_equipe">Logo da Equipe:</label><br>
+        <input type="file" name="logo_equipe" id="logo_equipe" value=""><br>
+       <p>
+         <input type="submit" id="btn_cadastrar_equipe" name="" value="Cadastrar Equipe">  <input type="reset" value="Limpar">
+    </form>
+   </div>
+   <div class="container">
+     <table class="table table-hover">
+  <thead>
+       <tr>
+         <th>Nome Equipe</th>
+         <th>Logo Equipe</th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+         <tbody id="tabela-listar-Equipe">
+        </tbody>
+     </table>
+
+   </div>
+</body>
+</html>

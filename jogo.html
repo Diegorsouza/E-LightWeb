@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8"/>
+     <title>E-Light</title>
+ </head>
+ <body>
+   <script src="js/script_jogo.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script>
+       var config = {
+       apiKey: "AIzaSyDCQzrIvC9SzXJ9p_ODVJgoY2YOIXb5-MM",
+       authDomain: "e-light-2b5d4.firebaseapp.com",
+       databaseURL: "https://e-light-2b5d4.firebaseio.com",
+       projectId: "e-light-2b5d4",
+       storageBucket: "e-light-2b5d4.appspot.com",
+       messagingSenderId: "630238691243"
+     };
+     firebase.initializeApp(config);
+     firebase.auth().signInAnonymously();
+     firebase.auth().onAuthStateChanged(firebaseUser =>{
+       console.log(firebaseUser);
+     });
+   </script>
+
+   <div class="container">
+     <h3>Gerenciar Jogos</h3>
+     <form id="cadastrajogo" action="jogo.html" method="post">
+       <label for="equipe_campea">Equipe Campea:</label><br>
+        <input type="text" name="equipe_campea" value="" id="equipe_campea">
+       <p>
+       <label for="dt_inicio_jogo">Data de inicio do jogo:</label><br>
+        <input type="date" name="dt_inicio_jogo" value="" id="dt_inicio_jogo">
+       <p>
+       <label for="dt_term_jogo">Data de termino da jogo:</label><br>
+        <input type="date" name="dt_term_jogo" value="" id="dt_term_jogo"><br>
+       <p>
+       <label for="partida">Partida:</label><br>
+        <input type="text" name="partida" value="" id="partida">
+       <p>
+       <label for="moedas_equipe_azul">Moedas Equipe Azul:</label><br>
+        <input type="number" name="moedas_equipe_azul" value="" id="moedas_equipe_azul">
+       <p>
+       <label for="moedas_equipe_verm">Moedas Equipe Vermelha:</label><br>
+        <input type="number" name="moedas_equipe_verm" value="" id="moedas_equipe_verm">
+       <p>
+       <label for="torres_equipe_azul">Torres Equipe Azul:</label><br>
+        <input type="number" name="torres_equipe_azul" value="" id="torres_equipe_azul">
+       <p>
+       <label for="torres_equipe_verm">Torres Equipe Vermelha:</label><br>
+        <input type="number" name="torres_equipe_verm" value="" id="torres_equipe_verm">
+       <p>
+       <label for="bans_equipe_azul">Bans Equipe Azul:</label><br>
+        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_0">
+        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_1">
+        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_2">
+        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_3">
+        <input type="number" name="bans_equipe_azul" value="" id="bans_azul_4"><br>
+       <p>
+       <label for="bans_equipe_vermelha">Bans Equipe Vermelha:</label><br>
+        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_0">
+        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_1">
+        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_2">
+        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_3">
+        <input type="number" name="bans_equipe_vermelha" value="" id="bans_verm_4"><br>
+       <p>
+        <input type="submit" name="" value="Cadastrar Jogo" id="btn_cadastrar_jogo">  <input type="reset" value="Limpar">
+    </form>
+  </div>
+  <div class="container">
+    <table class="table table-hover">
+ <thead>
+      <tr>
+        <th>Equipe Campea</th>
+        <th>Data Inicio Jogo:</th>
+        <th>Data Termino Jogo:</th>
+        <th>Partida:</th>
+        <th>Moedas equipe Azul:</th>
+        <th>Moedas equipe Vermelha:</th>
+        <th>Torres equipe Azul:</th>
+        <th>Torres equipe Vermelha:</th>
+        <th></th>
+        <th></th>
+     </tr>
+   </thead>
+        <tbody id="tabela-listar-Jogo">
+       </tbody>
+    </table>
+
+  </div>
+</body>
+</html>
