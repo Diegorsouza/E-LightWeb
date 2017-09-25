@@ -30,7 +30,6 @@ function exibirJogo(){
 		{
 		var dadosjogo = snap.val();
 		var infJogo = "";
-		var infBansAzul = "";
 		for(var cont in dadosjogo)
 			{
 				infJogo += "<tr>"+
@@ -110,10 +109,46 @@ function editarInfJogo(){
 	valorBotao = UPDATE;
 }
 
+function preencherBansAzul(){
+	var bansEquipeAzul = []
+	var banA1 = document.getElementById("bans_azul_0").value
+	var banA2 = document.getElementById("bans_azul_1").value
+	var banA3 = document.getElementById("bans_azul_2").value
+	var banA4 = document.getElementById("bans_azul_3").value
+	var banA5 = document.getElementById("bans_azul_4").value
+	bansEquipeAzul.push(banA1)
+	bansEquipeAzul.push(banA2)
+	bansEquipeAzul.push(banA3)
+	bansEquipeAzul.push(banA4)
+	bansEquipeAzul.push(banA5)
+//	console.log(bansEquipeAzul)
+	return bansEquipeAzul
+}
+
+function preencherBansVermelho(){
+	var bansEquipeVerm = []
+	var banV1 = document.getElementById("bans_verm_0").value
+	var banV2 = document.getElementById("bans_verm_1").value
+	var banV3 = document.getElementById("bans_verm_2").value
+	var banV4 = document.getElementById("bans_verm_3").value
+	var banV5 = document.getElementById("bans_verm_4").value
+	bansEquipeVerm.push(banV1)
+	bansEquipeVerm.push(banV2)
+	bansEquipeVerm.push(banV3)
+	bansEquipeVerm.push(banV4)
+	bansEquipeVerm.push(banV5)
+//	console.log(bansEquipeVerm)
+	return bansEquipeVerm
+}
+
+
 function enviarInformacoesJogo(event)
 {
 	//entender este comando
 	event.preventDefault();
+	var bansEquipeVerm = preencherBansVermelho()
+	var bansEquipeAzul = preencherBansAzul()
+//	console.log(bansEquipeAzul);
 	switch(valorBotao){
 		case CREATE:
 		refJogo.push(
@@ -126,7 +161,8 @@ function enviarInformacoesJogo(event)
 				moedasEquipeVermelha: event.target.moedas_equipe_verm.value,
 				torresEquipeAzul: event.target.torres_equipe_azul.value,
 				torresEquipeVermelha: event.target.torres_equipe_verm.value,
-				
+				bansAzul: bansEquipeAzul,
+				bansVermelho: bansEquipeVerm
 				});
 		break;
 		case UPDATE:
@@ -140,6 +176,8 @@ function enviarInformacoesJogo(event)
 				moedasEquipeVermelha: event.target.moedas_equipe_verm.value,
 				torresEquipeAzul: event.target.torres_equipe_azul.value,
 				torresEquipeVermelha: event.target.torres_equipe_verm.value,
+				bansAzul: bansEquipeAzul,
+				bansVermelho: bansEquipeVerm
 		});
 		break;
 	}

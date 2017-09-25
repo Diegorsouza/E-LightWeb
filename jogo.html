@@ -9,15 +9,7 @@
    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script>
-      var config = {
-       apiKey: "AIzaSyDCQzrIvC9SzXJ9p_ODVJgoY2YOIXb5-MM",
-       authDomain: "e-light-2b5d4.firebaseapp.com",
-       databaseURL: "https://e-light-2b5d4.firebaseio.com",
-       projectId: "e-light-2b5d4",
-       storageBucket: "e-light-2b5d4.appspot.com",
-       messagingSenderId: "630238691243"
-       // Initialize Firebase (Projeto TCC)
-       /*
+      // Initialize Firebase (Projeto TCC) 
        var config = {
         apiKey: "AIzaSyBNWYnb1e8SRixb8nfBvHGNijD2OIXQLd0",
         authDomain: "e-light-dbc42.firebaseapp.com",
@@ -25,7 +17,7 @@
         projectId: "e-light-dbc42",
         storageBucket: "e-light-dbc42.appspot.com",
         messagingSenderId: "277342076692"
-        */
+
      };
      firebase.initializeApp(config);
      firebase.auth().signInAnonymously();
@@ -41,10 +33,10 @@
         <input type="text" name="equipe_campea" value="" id="equipe_campea">
        <p>
        <label for="dt_inicio_jogo">Data de inicio do jogo:</label><br>
-        <input type="date" name="dt_inicio_jogo" value="" id="dt_inicio_jogo">
+        <input type="datetime-local" name="dt_inicio_jogo" value="" id="dt_inicio_jogo">
        <p>
        <label for="dt_term_jogo">Data de termino da jogo:</label><br>
-        <input type="date" name="dt_term_jogo" value="" id="dt_term_jogo"><br>
+        <input type="datetime-local" name="dt_term_jogo" value="" id="dt_term_jogo"><br>
        <p>
        <label for="partida">Partida:</label><br>
         <input type="text" name="partida" value="" id="partida">
