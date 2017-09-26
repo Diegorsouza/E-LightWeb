@@ -33,6 +33,7 @@ function exibirPartida(){
 		for(var cont in dadosPartida)
 			{
 				infPartida += "<tr>"+
+												"<td>" + cont + "</td>" +
 												"<td>" +  dadosPartida[cont].campeonato + "</td>"+
 												"<td>" +  dadosPartida[cont].dataInicio + "</td>"+
 												"<td>" +  dadosPartida[cont].dataTermino + "</td>"+
