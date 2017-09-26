@@ -33,6 +33,7 @@ function exibirCampeonato(){
 		for(var cont in dadosCampeonato)
 			{
 				infCampeonato += "<tr>"+
+												"<td>" + cont + "</td>" +
 												"<td>" +  dadosCampeonato[cont].nome + "</td>"+
                         //chaveCampeonato terá a posição que será excluida
 												'<td>' +
